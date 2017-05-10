@@ -24,3 +24,9 @@ def remover_todos_elencos():
 	global elencos
 	elencos = []
 	
+def buscar_elenco(cod_elenco):
+	for i in range(len(elencos)):
+		for j in range(len(elencos[i])):
+			if(elencos[i][j][0] == cod_elenco):
+				return elencos[i]
+	return None

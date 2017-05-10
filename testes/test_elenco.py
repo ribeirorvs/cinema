@@ -40,6 +40,20 @@ class TestElenco(unittest.TestCase):
 		
 		self.assertEqual("Principal", e[3])
 		
+	def test_buscar_elenco(self):
+		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(0, 2, 1, "Principal")
+		
+		e = elenco.buscar_elenco(0)
+		
+		e1 = e[0]
+		e2 = e[1]
+		
+		self.assertEqual(0, e1[0])
+		self.assertEqual("Coadjuvante", e1[3])
+		
+		self.assertEqual(0, e2[0])
+		self.assertEqual("Principal", e2[3])
 	
 if __name__ == '__main__':
 	unittest.main(exit=False)
