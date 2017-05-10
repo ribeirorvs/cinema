@@ -44,3 +44,11 @@ def iniciar_elencos():
 	adicionar_ator(0, 2, 1, "Principal")
 	adicionar_ator(1, 1, 1, "Coadjuvante")
 	adicionar_ator(1, 2, 1, "Principal")
+	
+def buscar_elenco_por_filme(cod_filme):
+	e = []
+	for i in range(len(elencos)):
+		for j in range(len(elencos[i])):
+			if(elencos[i][j][0] == cod_filme):
+				e.append(elencos[i])
+	return e
