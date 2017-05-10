@@ -44,3 +44,9 @@ def definir_status_ocupada(cod_sala):
 			return True
 	return False
 
+def definir_status_livre(cod_sala):
+	for i in range(len(salas)):
+		if(salas[i][0] == cod_sala):
+			salas[i][2] = "Livre"
+			return True
+	return False

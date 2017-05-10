@@ -75,5 +75,22 @@ class TestSala(unittest.TestCase):
 		
 		self.assertEqual("Ocupada", s[2])
 	
+	def test_definir_status_livre(self):
+		sala.cadastrar_sala(200)
+		sala.cadastrar_sala(400)
+		
+		sala.definir_status_ocupada(2)
+		
+		s = sala.buscar_sala(2)
+		
+		self.assertEqual("Ocupada", s[2])
+		
+		sala.definir_status_livre(2)
+		
+		s = sala.buscar_sala(2)
+		
+		self.assertEqual("Livre", s[2])
+	
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)
