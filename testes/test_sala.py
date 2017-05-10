@@ -36,6 +36,16 @@ class TestSala(unittest.TestCase):
 		s = sala.buscar_sala(2)
 		
 		self.assertEqual(400, s[1])
+		
+	def test_remover_sala(self):
+		sala.cadastrar_sala(200)
+		sala.cadastrar_sala(400)
+		
+		sala.remover_sala(2)
+		
+		s = sala.buscar_sala(2)
+		
+		self.assertIsNone(s)
 	
 if __name__ == '__main__':
 	unittest.main(exit=False)

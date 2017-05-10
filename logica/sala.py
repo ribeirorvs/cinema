@@ -25,3 +25,10 @@ def buscar_sala(cod_sala):
 		if(s[0] == cod_sala):
 			return s
 	return None
+	
+def remover_sala(cod_sala):
+	for s in salas:
+		if(s[0] == cod_sala):
+			salas.remove(s)
+			return True
+	return False
