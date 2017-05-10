@@ -11,13 +11,35 @@ class TestElenco(unittest.TestCase):
 		self.assertEqual(0, len(elencos))
 
 	def test_adicionar_ator(self):
-		elenco.adicionar_ator(1, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
 		elencos = elenco.listar_elenco()
 		
 		e = elencos[0]
 		
+		##Verifica a quantidade de elencos
 		self.assertEqual(1, len(elencos))
-		self.assertEqual(1, e[0])
 		
+		##Verifica a quantidade de atores no elenco
+		self.assertEqual(1, len(elencos[0]))
+		
+		self.assertEqual(0, e[0][0])
+	
+	def test_adicionar_dois_atores_mesmo_elenco(self):
+		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(0, 2, 1, "Principal")
+		
+		elencos = elenco.listar_elenco()
+		
+		##Verifica a quantidade de elencos
+		self.assertEqual(1, len(elencos))
+		
+		##Verifica a quantidade de atores no elenco
+		self.assertEqual(2, len(elencos[0]))
+		
+		e = elencos[0][1]
+		
+		self.assertEqual("Principal", e[3])
+		
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)

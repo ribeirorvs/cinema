@@ -10,16 +10,17 @@ def listar_elenco():
 def adicionar_ator(cod_elenco, cod_ator, cod_filme, tipo):
 	a = ator.buscar_ator(cod_ator)
 	f = filme.buscar_filme(cod_filme)
-	elenco = [cod_elenco, cod_ator, cod_filme, tipo]
-	for i in elencos:
-		if(i[0] == cod_elenco):
-			elenco = [a, f]
-			elencos[cod_elenco] = elenco
-			return True
-	elenco = [cod_elenco, cod_ator, cod_filme, tipo]
-	elencos.append(elenco)
+	elenco = [cod_elenco, a, f, tipo]
+	for i in range(len(elencos)):
+		for j in range(len(elencos[i])):
+			if(elencos[i][j][0] == cod_elenco):
+				elencos[i].append(elenco)
+				return True
+	elencos.append([])
+	elencos[len(elencos)-1].append(elenco)
 	return True
-	
+		
 def remover_todos_elencos():
 	global elencos
 	elencos = []
+	
