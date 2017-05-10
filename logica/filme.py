@@ -25,3 +25,11 @@ def buscar_filme(cod_filme):
         if(f[0] == cod_filme):
             return f
     return None
+
+def remover_filme(cod_filme):
+    for f in filmes:
+        if(f[0] == cod_filme):
+            filmes.remove(f)
+            return True
+    return False
+

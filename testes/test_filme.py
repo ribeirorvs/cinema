@@ -49,6 +49,16 @@ class TestFilme(unittest.TestCase):
         self.assertEqual("distribuidora 2", f[5])
         self.assertEqual("status 2", f[6])
         self.assertEqual("genero 2", f[7])
+
+    def test_remover_filme(self):
+        filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+        filme.cadastrar_filme("titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
+
+        filme.remover_filme(2)
+
+        f = filme.buscar_filme(2)
+
+        self.assertIsNone(f)
     
 if __name__ == '__main__':
     unittest.main(exit=False)
