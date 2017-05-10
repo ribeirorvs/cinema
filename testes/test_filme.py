@@ -28,6 +28,13 @@ class TestFilme(unittest.TestCase):
         self.assertEqual("status", a[6])
         self.assertEqual("genero", a[7])
         
+    def test_adicionar_dois_filmes(self):
+        filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+        filme.cadastrar_filme("titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
+
+        filmes = filme.listar_filmes()
+
+        self.assertEqual(2, len(filmes))        
         
 if __name__ == '__main__':
     unittest.main(exit=False)
