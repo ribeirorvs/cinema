@@ -76,6 +76,19 @@ class TestElenco(unittest.TestCase):
 		
 		self.assertIsNone(elencos)
 		
-	
+	def test_remover_todos_elencos(self):
+		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(0, 2, 1, "Principal")
+		elenco.adicionar_ator(1, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(1, 2, 1, "Principal")
+		
+		elenco.remover_todos_elencos()
+		
+		e = elenco.listar_elencos()
+		
+		self.assertEqual(0, len(e))
+		
+		
+		
 if __name__ == '__main__':
 	unittest.main(exit=False)
