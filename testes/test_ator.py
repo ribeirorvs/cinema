@@ -40,7 +40,6 @@ class TestAtor(unittest.TestCase):
         self.assertEqual("Nacionalidade 2", a[2])
         self.assertEqual(22, a[3])
 
-<<<<<<< HEAD
     
     def test_remover_ator(self):
         ator.cadastrar_ator("Nome", "Nacionalidade", 20)
@@ -62,7 +61,11 @@ class TestAtor(unittest.TestCase):
 
         self.assertEqual(0, len(a))
 
-=======
->>>>>>> parent of c28fee0... Incluido teste e logica para remover ator
+    def test_iniciar_atores(self):
+        ator.iniciar_atores()
+        atores = ator.listar_atores()
+
+        self.assertEqual(2, len(atores))
+
 if __name__ == '__main__':
     unittest.main(exit=False)

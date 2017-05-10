@@ -20,7 +20,11 @@ def buscar_ator(cod_ator):
     return None
 
 def remover_ator(cod_ator):
-    pass
+    for a in atores:
+        if(a[0] == cod_ator):
+            atores.remove(a)
+            return True
+    return False
 
 def remover_todos_atores():
     global atores
@@ -28,4 +32,6 @@ def remover_todos_atores():
     atores = []
     cod_ator = 0
     
-
+def iniciar_atores():
+    cadastrar_ator("Nome", "Nacionalidade", 20)
+    cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
