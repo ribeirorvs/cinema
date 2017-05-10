@@ -40,5 +40,17 @@ class TestAtor(unittest.TestCase):
         self.assertEqual("Nacionalidade 2", a[2])
         self.assertEqual(22, a[3])
 
+    
+    def test_remover_ator(self):
+        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
+
+        ator.remover_ator(2)
+
+        a = ator.buscar_ator(2)
+
+        self.assertIsNone(a)
+
+
 if __name__ == '__main__':
     unittest.main(exit=False)
