@@ -4,7 +4,7 @@ from logica import ator
 
 elencos = []
 
-def listar_elenco():
+def listar_elencos():
 	return elencos
 	
 def adicionar_ator(cod_elenco, cod_ator, cod_filme, tipo):

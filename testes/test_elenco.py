@@ -7,12 +7,12 @@ class TestElenco(unittest.TestCase):
 		elenco.remover_todos_elencos()
 	
 	def test_sem_elenco(self):
-		elencos = elenco.listar_elenco()
+		elencos = elenco.listar_elencos()
 		self.assertEqual(0, len(elencos))
 
 	def test_adicionar_ator(self):
 		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
-		elencos = elenco.listar_elenco()
+		elencos = elenco.listar_elencos()
 		
 		e = elencos[0]
 		
@@ -28,7 +28,7 @@ class TestElenco(unittest.TestCase):
 		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
 		elenco.adicionar_ator(0, 2, 1, "Principal")
 		
-		elencos = elenco.listar_elenco()
+		elencos = elenco.listar_elencos()
 		
 		##Verifica a quantidade de elencos
 		self.assertEqual(1, len(elencos))
@@ -54,6 +54,15 @@ class TestElenco(unittest.TestCase):
 		
 		self.assertEqual(0, e2[0])
 		self.assertEqual("Principal", e2[3])
+		
+	def test_listar_elenco(self):
+		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(0, 2, 1, "Principal")
+		
+		elencos = elenco.listar_elencos()
+		
+		self.assertEqual(1, len(elencos))
+		self.assertEqual(2, len(elencos[0]))
 	
 if __name__ == '__main__':
 	unittest.main(exit=False)
