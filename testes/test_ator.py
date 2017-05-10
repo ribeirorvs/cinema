@@ -3,6 +3,8 @@ from logica import ator
 
 class TestAtor(unittest.TestCase):
 
+    def setUp(self):
+        ator.remover_todos_atores()
 
     def test_sem_ator(self):
         atores = ator.listar_atores()

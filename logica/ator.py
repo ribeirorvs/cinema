@@ -20,5 +20,6 @@ def remover_ator(cod_ator):
     pass
 
 def remover_todos_atores():
-    pass
+    global atores
+    atores = []
 
