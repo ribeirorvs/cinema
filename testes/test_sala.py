@@ -65,6 +65,15 @@ class TestSala(unittest.TestCase):
 		
 		self.assertEqual(2, len(salas))
 		
+	def test_definir_status_ocupada(self):
+		sala.cadastrar_sala(200)
+		sala.cadastrar_sala(400)
+		
+		sala.definir_status_ocupada(2)
+		
+		s = sala.buscar_sala(2)
+		
+		self.assertEqual("Ocupada", s[2])
 	
 if __name__ == '__main__':
 	unittest.main(exit=False)

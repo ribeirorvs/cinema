@@ -36,3 +36,11 @@ def remover_sala(cod_sala):
 def iniciar_salas():
 	cadastrar_sala(200)
 	cadastrar_sala(400)
+	
+def definir_status_ocupada(cod_sala):
+	for i in range(len(salas)):
+		if(salas[i][0] == cod_sala):
+			salas[i][2] = "Ocupada"
+			return True
+	return False
+
