@@ -1,7 +1,7 @@
 atores = []
 
 def listar_atores():
-    pass
+    return atores
 
 def cadastrar_ator(nome, nacionalidade, idade):
     pass
