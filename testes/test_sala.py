@@ -3,7 +3,7 @@ from logica import sala
 
 class TestSala(unittest.TestCase):
 
-    pass
+    
 
 
 
