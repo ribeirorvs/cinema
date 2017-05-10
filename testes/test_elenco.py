@@ -88,6 +88,13 @@ class TestElenco(unittest.TestCase):
 		
 		self.assertEqual(0, len(e))
 		
+	def test_iniciar_elenco(self):
+		elenco.iniciar_elencos()
+		
+		elencos = elenco.listar_elencos()
+		
+		self.assertEqual(2, len(elencos))
+		
 		
 		
 if __name__ == '__main__':

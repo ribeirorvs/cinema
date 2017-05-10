@@ -38,3 +38,9 @@ def remover_elenco(cod_elenco):
 				elencos.remove(elencos[i])
 				return True
 	return False
+	
+def iniciar_elencos():
+	adicionar_ator(0, 1, 1, "Coadjuvante")
+	adicionar_ator(0, 2, 1, "Principal")
+	adicionar_ator(1, 1, 1, "Coadjuvante")
+	adicionar_ator(1, 2, 1, "Principal")
