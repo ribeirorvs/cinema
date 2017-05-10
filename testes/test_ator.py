@@ -16,5 +16,13 @@ class TestAtor(unittest.TestCase):
         atores = ator.listar_atores()
         self.assertEqual(1, len(atores))
 
+        a = atores[0]
+
+        self.assertEqual("Nome", a[1])
+        self.assertEqual("Nacionalidade", a[2])
+        self.assertEqual(20, a[3])
+
+    
+
 if __name__ == '__main__':
     unittest.main(exit=False)
