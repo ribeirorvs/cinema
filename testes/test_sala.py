@@ -2,7 +2,10 @@ import unittest
 from logica import sala
 
 class TestSala(unittest.TestCase):
-
+	
+	def setUp(self):
+		sala.remover_todas_salas()
+	
 	def test_sem_sala(self):
 		salas = sala.listar_salas()
 		self.assertEqual(0, len(salas))

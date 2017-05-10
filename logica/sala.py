@@ -13,3 +13,10 @@ def cadastrar_sala(lotacao):
 	cod = _gerar_codigo()
 	sala = [cod, lotacao]
 	salas.append(sala)
+	
+def remover_todas_salas():
+	global salas
+	global cod_sala
+	salas = []
+	cod_sala = 0
+	
