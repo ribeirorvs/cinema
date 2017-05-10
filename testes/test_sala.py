@@ -20,6 +20,7 @@ class TestSala(unittest.TestCase):
 		s = salas[0]
 		
 		self.assertEqual(200, s[1])
+		self.assertEqual("Livre", s[2])
 
 	def test_cadastrar_duas_salas(self):
 		sala.cadastrar_sala(200)
@@ -36,6 +37,7 @@ class TestSala(unittest.TestCase):
 		s = sala.buscar_sala(2)
 		
 		self.assertEqual(400, s[1])
+		self.assertEqual("Livre", s[2])
 		
 	def test_remover_sala(self):
 		sala.cadastrar_sala(200)
@@ -62,5 +64,7 @@ class TestSala(unittest.TestCase):
 		salas = sala.listar_salas()
 		
 		self.assertEqual(2, len(salas))
+		
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)

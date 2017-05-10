@@ -11,7 +11,7 @@ def listar_salas():
 
 def cadastrar_sala(lotacao):
 	cod = _gerar_codigo()
-	sala = [cod, lotacao]
+	sala = [cod, lotacao, "Livre"]
 	salas.append(sala)
 	
 def remover_todas_salas():
