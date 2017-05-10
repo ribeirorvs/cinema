@@ -12,3 +12,9 @@ def cadastrar_filme(titulo, duracao, classificacao, diretor, distribuidora, stat
     cod_filme = _gerar_codigo()
     filme = [cod_filme, titulo, duracao, classificacao, diretor, distribuidora, status, genero]
     filmes.append(filme)
+
+def remover_todos_filmes():
+    global filmes
+    global cod_filme
+    filmes = []
+    cod_filme = 0

@@ -2,7 +2,10 @@ import unittest
 from logica import filme
 
 class TestFilme(unittest.TestCase):
-    
+
+    def setUp(self):
+        filme.remover_todos_filmes()
+
     def test_sem_filme(self):
         filmes = filme.listar_filmes()
 
@@ -11,11 +14,11 @@ class TestFilme(unittest.TestCase):
     def test_cadastrar_um_filme(self):
         filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
 
-        atores = ator.listar_atores()
+        filmes = filme.listar_filmes()
 
-        self.assertEqual(1, len(atores))
+        self.assertEqual(1, len(filmes))
 
-        a = atores[0]
+        a = filmes[0]
 
         self.assertEqual("titulo", a[1])
         self.assertEqual("duração", a[2])
@@ -25,6 +28,6 @@ class TestFilme(unittest.TestCase):
         self.assertEqual("status", a[6])
         self.assertEqual("genero", a[7])
         
-
+        
 if __name__ == '__main__':
     unittest.main(exit=False)
