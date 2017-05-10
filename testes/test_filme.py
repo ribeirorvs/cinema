@@ -69,6 +69,12 @@ class TestFilme(unittest.TestCase):
         f = filme.listar_filmes()
 
         self.assertEqual(0, len(f))
+
+    def test_iniciar_filmes(self):
+        filme.iniciar_filmes()
+        filmes = filme.listar_filmes()
+
+        self.assertEqual(2, len(filmes))
     
 if __name__ == '__main__':
     unittest.main(exit=False)

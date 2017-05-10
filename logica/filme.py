@@ -33,3 +33,6 @@ def remover_filme(cod_filme):
             return True
     return False
 
+def iniciar_filmes():
+    cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+    cadastrar_filme("titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
