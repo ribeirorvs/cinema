@@ -32,3 +32,7 @@ def remover_sala(cod_sala):
 			salas.remove(s)
 			return True
 	return False
+	
+def iniciar_salas():
+	cadastrar_sala(200)
+	cadastrar_sala(400)

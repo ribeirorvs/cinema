@@ -57,5 +57,10 @@ class TestSala(unittest.TestCase):
 		
 		self.assertEqual(0, len(s))
 	
+	def test_iniciar_salas(self):
+		sala.iniciar_salas()
+		salas = sala.listar_salas()
+		
+		self.assertEqual(2, len(salas))
 if __name__ == '__main__':
 	unittest.main(exit=False)
