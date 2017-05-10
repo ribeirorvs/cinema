@@ -28,6 +28,14 @@ class TestSala(unittest.TestCase):
 		salas = sala.listar_salas()
 		
 		self.assertEqual(2, len(salas))
+	
+	def test_buscar_sala(self):
+		sala.cadastrar_sala(200)
+		sala.cadastrar_sala(400)
 		
+		s = sala.buscar_sala(2)
+		
+		self.assertEqual(400, s[1])
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)

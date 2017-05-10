@@ -20,3 +20,8 @@ def remover_todas_salas():
 	salas = []
 	cod_sala = 0
 	
+def buscar_sala(cod_sala):
+	for s in salas:
+		if(s[0] == cod_sala):
+			return s
+	return None
