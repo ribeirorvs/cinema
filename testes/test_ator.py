@@ -30,7 +30,15 @@ class TestAtor(unittest.TestCase):
 
         self.assertEqual(2, len(atores))
 
+    def test_buscar_ator(self):
+        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
 
+        a = ator.buscar_ator(2)
+        
+        self.assertEqual("Nome 2", a[1])
+        self.assertEqual("Nacionalidade 2", a[2])
+        self.assertEqual(22, a[3])
 
 if __name__ == '__main__':
     unittest.main(exit=False)

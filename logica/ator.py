@@ -14,12 +14,18 @@ def cadastrar_ator(nome, nacionalidade, idade):
     atores.append(ator)
 
 def buscar_ator(cod_ator):
-    pass
+    for i in atores:
+        if(i[0] == cod_ator):
+            return i
+    return None
 
 def remover_ator(cod_ator):
     pass
 
 def remover_todos_atores():
     global atores
+    global cod_ator
     atores = []
+    cod_ator = 0
+    
 
