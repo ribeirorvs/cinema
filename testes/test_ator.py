@@ -22,7 +22,15 @@ class TestAtor(unittest.TestCase):
         self.assertEqual("Nacionalidade", a[2])
         self.assertEqual(20, a[3])
 
-    
+    def test_adicionar_dois_atores(self):
+        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
+
+        atores = ator.listar_atores()
+
+        self.assertEqual(2, len(atores))
+
+
 
 if __name__ == '__main__':
     unittest.main(exit=False)
