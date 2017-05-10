@@ -19,3 +19,7 @@ def adicionar_ator(cod_elenco, cod_ator, cod_filme, tipo):
 	elenco = [cod_elenco, cod_ator, cod_filme, tipo]
 	elencos.append(elenco)
 	return True
+	
+def remover_todos_elencos():
+	global elencos
+	elencos = []

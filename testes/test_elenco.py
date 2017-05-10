@@ -3,6 +3,9 @@ from logica import elenco
 
 class TestElenco(unittest.TestCase):
 	
+	def setUp(self):
+		elenco.remover_todos_elencos()
+	
 	def test_sem_elenco(self):
 		elencos = elenco.listar_elenco()
 		self.assertEqual(0, len(elencos))
