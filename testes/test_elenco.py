@@ -103,7 +103,17 @@ class TestElenco(unittest.TestCase):
 		
 		e = elenco.buscar_elenco_por_filme(1)
 		
-		self.assertEqual(2, len(e))
+		self.assertEqual(0, len(e))
+	
+	def test_buscar_elencos_por_ator(self):
+		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(0, 2, 1, "Principal")
+		elenco.adicionar_ator(1, 1, 1, "Coadjuvante")
+		elenco.adicionar_ator(1, 2, 1, "Principal")
 		
+		e = elenco.buscar_elenco_por_ator(1)
+		
+		self.assertEqual(0, len(e))
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)
