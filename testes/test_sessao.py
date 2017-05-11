@@ -3,6 +3,9 @@ from logica import sessao
 
 class TestSessao(unittest.TestCase):
 	
+	def setUp(self):
+		sessao.remover_todos_ingressos()
+	
 	def test_sem_sessao(self):
 		sessoes = sessao.listar_sessoes()
 		
