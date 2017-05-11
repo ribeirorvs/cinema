@@ -25,3 +25,9 @@ def remover_todos_ingressos():
 	
 	sessoes = []
 	cod_sessao = 0
+	
+def recuperar_sessao(cod_sessao):
+	for s in sessoes:
+		if(s[0] == cod_sessao):
+			return s
+	return None

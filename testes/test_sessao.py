@@ -40,5 +40,16 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual(None, s[2])
 		self.assertEqual("20h", s[3])
 	
+	def test_recuperar_sessao(self):
+		sessao.criar_sessao(1, 1, "18h")
+		sessao.criar_sessao(2, 2, "20h")
+		
+		s = sessao.recuperar_sessao(2)
+		
+		self.assertEqual(2, s[0])
+		self.assertEqual(None, s[1])
+		self.assertEqual(None, s[2])
+		self.assertEqual("20h", s[3])
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)
