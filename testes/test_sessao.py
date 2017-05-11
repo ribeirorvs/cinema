@@ -2,7 +2,11 @@ import unittest
 from logica import sessao
 
 class TestSessao(unittest.TestCase):
-	pass
+	
+	def test_sem_sessao(self):
+		sessoes = sessao.listar_sessoes()
+		
+		self.assertEqual(0, len(sessoes))
 	
 	
 if __name__ == '__main__':
