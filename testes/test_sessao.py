@@ -1,9 +1,13 @@
 import unittest
 from logica import sessao
+from logica import sala
+from logica import filme
 
 class TestSessao(unittest.TestCase):
 	
 	def setUp(self):
+		sala.iniciar_salas()
+		filme.iniciar_filmes()
 		sessao.remover_todas_sessoes()
 	
 	def test_sem_sessao(self):
@@ -19,10 +23,11 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual(1, len(sessoes))
 		
 		s = sessoes[0]
-		
+		salas = sala.buscar_sala(1)
+		filmes = filme.buscar_filme(1)
 		self.assertEqual(1, s[0])
-		self.assertEqual(None, s[1])
-		self.assertEqual(None, s[2])
+		self.assertEqual(filmes, s[1])
+		self.assertEqual(salas, s[2])
 		self.assertEqual("18h", s[3])
 	
 	def test_criar_duas_sessoes(self):
@@ -34,10 +39,11 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual(2, len(sessoes))
 		
 		s = sessoes[1]
-		
+		salas = sala.buscar_sala(2)
+		filmes = filme.buscar_filme(2)
 		self.assertEqual(2, s[0])
-		self.assertEqual(None, s[1])
-		self.assertEqual(None, s[2])
+		self.assertEqual(filmes, s[1])
+		self.assertEqual(salas, s[2])
 		self.assertEqual("20h", s[3])
 	
 	def test_recuperar_sessao(self):
@@ -45,10 +51,11 @@ class TestSessao(unittest.TestCase):
 		sessao.criar_sessao(2, 2, "20h")
 		
 		s = sessao.recuperar_sessao(2)
-		
+		salas = sala.buscar_sala(2)
+		filmes = filme.buscar_filme(2)
 		self.assertEqual(2, s[0])
-		self.assertEqual(None, s[1])
-		self.assertEqual(None, s[2])
+		self.assertEqual(filmes, s[1])
+		self.assertEqual(salas, s[2])
 		self.assertEqual("20h", s[3])
 	
 	def test_remover_sessao(self):
@@ -83,8 +90,8 @@ class TestSessao(unittest.TestCase):
 		sessao.criar_sessao(2, 2, "20h")
 		
 		s = sessao.verificar_lotacao(2)
-		
-		self.assertEqual(None, s)
+		salas = sala.buscar_sala(2)
+		self.assertEqual(salas[1], s[1])
 	
 if __name__ == '__main__':
 	unittest.main(exit=False)
