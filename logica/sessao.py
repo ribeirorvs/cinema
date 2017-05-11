@@ -19,7 +19,7 @@ def criar_sessao(cod_filme, cod_sala, horario):
 	sessao = [cod, f, s, horario]
 	sessoes.append(sessao)
 	
-def remover_todos_ingressos():
+def remover_todas_sessoes():
 	global sessoes
 	global cod_sessao
 	
@@ -31,3 +31,11 @@ def recuperar_sessao(cod_sessao):
 		if(s[0] == cod_sessao):
 			return s
 	return None
+
+def remover_sessao(cod_sessao):
+	for s in sessoes:
+		if(s[0] == cod_sessao):
+			sessoes.remove(s)
+			return True
+	return False
+
