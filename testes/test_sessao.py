@@ -71,5 +71,12 @@ class TestSessao(unittest.TestCase):
 		
 		self.assertEqual(0, len(sessoes))
 	
+	def test_iniciar_sessaoes(self):
+		sessao.iniciar_sessoes()
+		
+		sessoes = sessao.listar_sessoes()
+		
+		self.assertEqual(2, len(sessoes))
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)

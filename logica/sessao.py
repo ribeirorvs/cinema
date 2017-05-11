@@ -39,3 +39,6 @@ def remover_sessao(cod_sessao):
 			return True
 	return False
 
+def iniciar_sessoes():
+	criar_sessao(1, 1, "18h")
+	criar_sessao(2, 2, "20h")

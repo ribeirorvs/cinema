@@ -105,13 +105,13 @@ class TestElenco(unittest.TestCase):
 		
 		self.assertEqual(0, len(e))
 	
-	def test_buscar_elencos_por_ator(self):
+	def test_buscar_filmes_por_ator(self):
 		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
 		elenco.adicionar_ator(0, 2, 1, "Principal")
 		elenco.adicionar_ator(1, 1, 1, "Coadjuvante")
 		elenco.adicionar_ator(1, 2, 1, "Principal")
 		
-		e = elenco.buscar_elenco_por_ator(1)
+		e = elenco.buscar_filmes_por_ator(1)
 		
 		self.assertEqual(0, len(e))
 	

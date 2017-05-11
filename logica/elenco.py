@@ -53,7 +53,7 @@ def buscar_elenco_por_filme(cod_filme):
 				e.append(elencos[i])
 	return e
 	
-def buscar_elenco_por_ator(cod_ator):
+def buscar_filmes_por_ator(cod_ator):
 	e = []
 	for i in range(len(elencos)):
 		for j in range(len(elencos[i])):
