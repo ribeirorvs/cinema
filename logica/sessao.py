@@ -49,3 +49,11 @@ def verificar_lotacao(cod_sessao):
 		if(s[0] == cod_sessao):
 			return s[4]
 	return None
+
+def diminuir_lotacao(cod_sessao):
+	global sessoes
+	for s in sessoes:
+		if(s[0] == cod_sessao):
+			sessoes[s][4] -= 1
+			return True
+	return False
