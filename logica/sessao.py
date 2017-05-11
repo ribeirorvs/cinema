@@ -16,7 +16,8 @@ def criar_sessao(cod_filme, cod_sala, horario):
 	cod = _gerar_codigo()
 	f = filme.buscar_filme(cod_filme)
 	s = sala.buscar_sala(cod_sala)
-	sessao = [cod, f, s, horario]
+	disponibilidade = s[1]
+	sessao = [cod, f, s, horario, disponibilidade]
 	sessoes.append(sessao)
 	
 def remover_todas_sessoes():
@@ -42,3 +43,9 @@ def remover_sessao(cod_sessao):
 def iniciar_sessoes():
 	criar_sessao(1, 1, "18h")
 	criar_sessao(2, 2, "20h")
+	
+def verificar_lotacao(cod_sessao):
+	for s in sessoes:
+		if(s[0] == cod_sessao):
+			return s[4]
+	return None

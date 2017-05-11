@@ -78,5 +78,13 @@ class TestSessao(unittest.TestCase):
 		
 		self.assertEqual(2, len(sessoes))
 	
+	def test_verificar_lotacao(self):
+		sessao.criar_sessao(1, 1, "18h")
+		sessao.criar_sessao(2, 2, "20h")
+		
+		s = sessao.verificar_lotacao(2)
+		
+		self.assertEqual(None, s)
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)
