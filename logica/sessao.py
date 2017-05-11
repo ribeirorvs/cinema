@@ -16,7 +16,7 @@ def criar_sessao(cod_filme, cod_sala, horario):
 	cod = _gerar_codigo()
 	f = filme.buscar_filme(cod_filme)
 	s = sala.buscar_sala(cod_sala)
-	disponibilidade = s[1]
+	disponibilidade = s
 	sessao = [cod, f, s, horario, disponibilidade]
 	sessoes.append(sessao)
 	
