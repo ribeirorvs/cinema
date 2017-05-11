@@ -61,5 +61,15 @@ class TestSessao(unittest.TestCase):
 		
 		self.assertIsNone(s)
 	
+	def test_remover_todas_sessoes(self):
+		sessao.criar_sessao(1, 1, "18h")
+		sessao.criar_sessao(2, 2, "20h")
+		
+		sessao.remover_todas_sessoes()
+		
+		sessoes = sessao.listar_sessoes()
+		
+		self.assertEqual(0, len(sessoes))
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)
