@@ -91,7 +91,7 @@ class TestSessao(unittest.TestCase):
 		
 		s = sessao.verificar_lotacao(2)
 		salas = sala.buscar_sala(2)
-		self.assertEqual(salas[1], s[1])
+		self.assertEqual(salas[1], s)
 	
 if __name__ == '__main__':
 	unittest.main(exit=False)

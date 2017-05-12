@@ -1,7 +1,16 @@
 import unittest
 from logica import ingresso
+from logica import sessao
+from logica import sala
+from logica import filme
+
 
 class TestIngresso(unittest.TestCase):
+	
+	def setUp(self):
+		sala.iniciar_salas()
+		filme.iniciar_filmes()
+		sessao.iniciar_sessoes()
 	
 	def test_sem_ingresso(self):
 		ingressos = ingresso.listar_ingressos()
@@ -9,9 +18,11 @@ class TestIngresso(unittest.TestCase):
 		self.assertEqual(0, len(ingressos))
 	
 	def test_venda_um_ingresso_meia(self):
-		ingressos = ingresso.venda_ingresso_meia(1)
+		ingresso.venda_ingresso_meia(1)
 		
-		self.assertEqual(1, len(i))
+		ingressos = ingresso.listar_ingressos()
+		
+		self.assertEqual(1, len(ingressos))
 
 		i = ingressos[0]
 		

@@ -47,13 +47,13 @@ def iniciar_sessoes():
 def verificar_lotacao(cod_sessao):
 	for s in sessoes:
 		if(s[0] == cod_sessao):
-			return s[4]
+			return s[4][1]
 	return None
 
 def diminuir_lotacao(cod_sessao):
 	global sessoes
-	for s in sessoes:
-		if(s[0] == cod_sessao):
-			sessoes[s][4] -= 1
+	for i in range(len(sessoes)):
+		if(sessoes[i][0] == cod_sessao):
+			sessoes[i][4][1] -= 1
 			return True
 	return False
