@@ -12,7 +12,7 @@ def venda_ingresso_meia(cod_ingresso, cod_sessao):
 		sessao.diminuir_lotacao(cod_sessao)
 		s = sessao.recuperar_sessao(cod_sessao)
 		i = [s, "Meia"]
-		ingressos.append(s)
+		ingressos.append(i)
 	else:
 		return False
 

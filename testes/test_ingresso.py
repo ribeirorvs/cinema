@@ -22,9 +22,9 @@ class TestIngresso(unittest.TestCase):
 		ingresso.venda_ingresso_meia(1, 1)
 		
 		ingressos = ingresso.listar_ingressos()
-		
+		print(ingressos)
 		self.assertEqual(1, len(ingressos))
-		self.assertEqual("Meia", ingressos[1])
+		self.assertEqual("Meia", ingressos[0])
 
 		i = ingressos[0]
 		
