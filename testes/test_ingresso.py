@@ -90,6 +90,21 @@ class TestIngresso(unittest.TestCase):
 		ingressos = ingresso.listar_ingressos()
 		
 		self.assertEqual(4, len(ingressos))
+	
+	def test_buscar_ingresso(self):
+		ingresso.venda_ingresso_inteira(1, 1)
+		ingresso.venda_ingresso_inteira(2, 2)
+		ingresso.venda_ingresso_meia(3, 1)
+		ingresso.venda_ingresso_meia(4, 2)
 		
+		i = ingresso.buscar_ingresso(3)
+		
+		self.assertEqual(3, i[0])
+		
+		s = sessao.recuperar_sessao(1)
+		
+		self.assertEqual(s, i[1])
+		self.assertEqual("Meia", i[2])
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)

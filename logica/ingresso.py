@@ -39,3 +39,9 @@ def listar_ingressos_vendidos(cod_sessao):
 	if(len(vendidos) > 0):
 		return vendidos
 	return None
+
+def buscar_ingresso(cod_ingresso):
+	for i in ingressos:
+		if(i[0] == cod_ingresso):
+			return i
+	return None
