@@ -106,5 +106,17 @@ class TestIngresso(unittest.TestCase):
 		self.assertEqual(s, i[1])
 		self.assertEqual("Meia", i[2])
 	
+	def test_remover_ingresso(self):
+		ingresso.venda_ingresso_inteira(1, 1)
+		ingresso.venda_ingresso_inteira(2, 2)
+		ingresso.venda_ingresso_meia(3, 1)
+		ingresso.venda_ingresso_meia(4, 2)
+		
+		ingresso.remover_ingresso(3)
+		
+		i = ingresso.buscar_ingresso(3)
+		
+		self.assertIsNone(i)
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)

@@ -45,3 +45,10 @@ def buscar_ingresso(cod_ingresso):
 		if(i[0] == cod_ingresso):
 			return i
 	return None
+
+def remover_ingresso(cod_ingresso):
+	for i in ingressos:
+		if(i[0] == cod_ingresso):
+			ingressos.remove(i)
+			return True
+	return False
