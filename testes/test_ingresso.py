@@ -56,5 +56,22 @@ class TestIngresso(unittest.TestCase):
 		
 		self.assertEqual(sessoes, i)
 	
+	def test_venda_dois_ingressos_inteira(self):
+		ingresso.venda_ingresso_inteira(1, 1)
+		ingresso.venda_ingresso_inteira(2, 2)
+		
+		ingressos = ingresso.listar_ingressos()
+		
+		self.assertEqual(2, len(ingressos))
+		self.assertEqual("Inteira", ingressos[1][1])
+		
+		i = ingressos[1][0]
+		
+		sessoes = sessao.recuperar_sessao(2)
+		
+		self.assertEqual(sessoes, i)
+		
+		
+		
 if __name__ == '__main__':
 	unittest.main(exit=False)
