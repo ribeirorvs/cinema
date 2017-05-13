@@ -73,11 +73,21 @@ class TestIngresso(unittest.TestCase):
 		
 	def test_listar_ingressos_vendidos(self):
 		ingresso.venda_ingresso_inteira(1, 1)
-		ingresso.venda_ingresso_inteira(2, 1)
+		ingresso.venda_ingresso_inteira(2, 2)
 		ingresso.venda_ingresso_meia(3, 1)
-		ingresso.venda_ingresso_meia(4, 1)
+		ingresso.venda_ingresso_meia(4, 2)
 		
 		ingressos = ingresso.listar_ingressos_vendidos(1)
+		
+		self.assertEqual(2, len(ingressos))
+	
+	def test_listar_ingressos(self):
+		ingresso.venda_ingresso_inteira(1, 1)
+		ingresso.venda_ingresso_inteira(2, 2)
+		ingresso.venda_ingresso_meia(3, 1)
+		ingresso.venda_ingresso_meia(4, 2)
+		
+		ingressos = ingresso.listar_ingressos()
 		
 		self.assertEqual(4, len(ingressos))
 		
