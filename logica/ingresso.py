@@ -2,7 +2,7 @@ from logica import sessao
 
 ingressos = []
 
-def listar_ingressos():
+def listar_ingressos_vendidos():
 	return ingressos
 	
 def venda_ingresso_meia(cod_ingresso, cod_sessao):

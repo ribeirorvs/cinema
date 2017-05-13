@@ -14,14 +14,14 @@ class TestIngresso(unittest.TestCase):
 		ingresso.remover_todos_ingressos()
 	
 	def test_sem_ingresso(self):
-		ingressos = ingresso.listar_ingressos()
+		ingressos = ingresso.listar_ingressos_vendidos()
 		
 		self.assertEqual(0, len(ingressos))
 	
 	def test_venda_um_ingresso_meia(self):
 		ingresso.venda_ingresso_meia(1, 1)
 		
-		ingressos = ingresso.listar_ingressos()
+		ingressos = ingresso.listar_ingressos_vendidos()
 		self.assertEqual(1, len(ingressos))
 		self.assertEqual("Meia", ingressos[0][1])
 		i = ingressos[0][0]
@@ -33,7 +33,7 @@ class TestIngresso(unittest.TestCase):
 		ingresso.venda_ingresso_meia(1, 1)
 		ingresso.venda_ingresso_meia(2, 2)
 		
-		ingressos = ingresso.listar_ingressos()
+		ingressos = ingresso.listar_ingressos_vendidos()
 		
 		self.assertEqual(2, len(ingressos))
 		self.assertEqual("Meia", ingressos[1][1])
@@ -46,7 +46,7 @@ class TestIngresso(unittest.TestCase):
 	def test_venda_um_ingresso_inteira(self):
 		ingresso.venda_ingresso_inteira(1, 1)
 		
-		ingressos = ingresso.listar_ingressos()
+		ingressos = ingresso.listar_ingressos_vendidos()
 		
 		self.assertEqual(1, len(ingressos))
 		self.assertEqual("Inteira", ingressos[0][1])
@@ -60,7 +60,7 @@ class TestIngresso(unittest.TestCase):
 		ingresso.venda_ingresso_inteira(1, 1)
 		ingresso.venda_ingresso_inteira(2, 2)
 		
-		ingressos = ingresso.listar_ingressos()
+		ingressos = ingresso.listar_ingressos_vendidos()
 		
 		self.assertEqual(2, len(ingressos))
 		self.assertEqual("Inteira", ingressos[1][1])
@@ -71,7 +71,13 @@ class TestIngresso(unittest.TestCase):
 		
 		self.assertEqual(sessoes, i)
 		
+	def test_listar_ingressos_vendidos(self):
+		ingresso.venda_ingresso_inteira(1, 1)
+		ingresso.venda_ingresso_inteira(2, 2)
 		
+		ingressos = ingresso.listar_ingressos_vendidos()
+		
+		self.assertEqual(2, len(ingressos))
 		
 if __name__ == '__main__':
 	unittest.main(exit=False)
