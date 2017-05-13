@@ -30,19 +30,19 @@ class TestIngresso(unittest.TestCase):
 		sessoes = sessao.recuperar_sessao(1)
 		
 		self.assertEqual(sessoes, i)
-	# def test_venda_dois_ingressos_meia(self):
-		# ingresso.venda_ingresso_meia(1, 1)
-		# ingresso.venda_ingresso_meia(2, 2)
+	def test_venda_dois_ingressos_meia(self):
+		ingresso.venda_ingresso_meia(1, 1)
+		ingresso.venda_ingresso_meia(2, 2)
 		
-		# ingressos = ingresso.listar_ingressos()
+		ingressos = ingresso.listar_ingressos()
 		
-		# self.assertEqual(2, len(ingressos))
+		self.assertEqual(2, len(ingressos))
+		self.assertEqual("Meia", ingressos[1][1])
+		i = ingressos[1][0]
 		
-		# i = ingressos[1]
+		sessoes = sessao.recuperar_sessao(2)
 		
-		# sessoes = sessao.recuperar_sessao(2)
-		
-		# self.assertEqual(sessoes, i)
+		self.assertEqual(sessoes, i)
 	
 	# def test_venda_um_ingresso_inteira(self):
 		# ingresso.venda_ingresso_inteira(1, 1)
