@@ -30,7 +30,17 @@ def menu_buscar():
 		print("Ator nao encontrado")
 	else:
 		imprimir_ator(a)
-	
+
+def menu_remover():
+	print("\nRemover Ator\n")
+	cod_ator = int(input("Codigo do ator: "))
+	print()
+	a = ator.remover_ator(cod_ator)
+	if (a == False):
+		print("Ator nao encontrado")
+	else:
+		print("Ator removido")
+
 def mostrar_menu():
 	menu = ("\n----------------\n"+
              "(1) Cadastrar novo Ator \n" +
@@ -53,7 +63,7 @@ def mostrar_menu():
 		elif(option == 3):
 			menu_buscar()
 		elif(option == 4):
-			pass
+			menu_remover()
 		elif(option == 5):
 			pass
 		elif(option == 0):
