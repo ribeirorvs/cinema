@@ -13,12 +13,16 @@ from logica import elenco
 from gui import menu_sessao
 from logica import sessao
 
+from gui import menu_ingresso
+from logica import ingresso
+
 def inicializar_dados():
 	ator.iniciar_atores()
 	sala.iniciar_salas()
 	filme.iniciar_filmes()
 	sessao.iniciar_sessoes()
 	elenco.iniciar_elencos()
+	ingresso.iniciar_ingressos()
 	
 def mostrar_menu():
 	inicializar_dados()
@@ -49,7 +53,7 @@ def mostrar_menu():
 		elif(option == 5):
 			menu_sessao.mostrar_menu()
 		elif(option == 6):
-			pass
+			menu_ingresso.mostrar_menu()
 		elif(option == 0):
 			print("Finalizando...")
 			break

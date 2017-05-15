@@ -33,6 +33,26 @@ def menu_buscar():
 	else:
 		imprimir_sessao(s)
 
+def menu_remover():
+	print("\nRemover Sessao\n")
+	cod_sessao = int(input("Codigo Sessao: "))
+	print()
+	s = sessao.remover_sessao(cod_sessao)
+	if(s == False):
+		print("Sessao nao encontrada")
+	else:
+		print("Sessao removida")
+		
+def menu_lotacao():
+	print("\nRemover Sessao\n")
+	cod_sessao = int(input("Codigo Sessao: "))
+	print()
+	s = sessao.verificar_lotacao(cod_sessao)
+	if(s == None):
+		print("Sessao nao encontrada")
+	else:
+		print("Lotacao: ", s)
+		
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Criar nova Sessao \n" +
@@ -55,9 +75,9 @@ def mostrar_menu():
 		elif(option == 3):
 			menu_buscar()
 		elif(option == 4):
-			pass
+			menu_remover()
 		elif(option == 5):
-			pass
+			menu_lotacao()
 		elif(option == 0):
 			print("Retornando ao menu principal...")
 			break
