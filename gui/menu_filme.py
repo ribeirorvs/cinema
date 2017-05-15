@@ -39,6 +39,17 @@ def menu_buscar():
 	else:
 		imprimir_filme(f)
 	
+def menu_remover():
+	print("\nRemover Filme\n")
+	cod_filme = int(input("Codigo do filme: "))
+	print()
+	f = filme.remover_filme(cod_filme)
+	if(f == False):
+		print("Filme nao encontrado")
+	else:
+		print("Filme removido")
+
+	
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Cadastrar novo Filme \n" +
@@ -60,7 +71,7 @@ def mostrar_menu():
 		elif(option == 3):
 			menu_buscar()
 		elif(option == 4):
-			pass
+			menu_remover()
 		elif(option == 0):
 			print("Retornando ao menu principal...")
 			break
