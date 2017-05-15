@@ -43,12 +43,11 @@ def menu_remover():
 
 def mostrar_menu():
 	menu = ("\n----------------\n"+
-             "(1) Cadastrar novo Ator \n" +
-             "(2) Listar Atores \n" +
-             "(3) Buscar Ator por codigo \n" +
-             "(4) Remover Ator \n" +
-             "(5) Remover todos os Atores \n" +
-             "(0) Voltar\n"+
+            "(1) Cadastrar novo Ator \n" +
+            "(2) Listar Atores \n" +
+            "(3) Buscar Ator por codigo \n" +
+            "(4) Remover Ator \n" +
+			"(0) Voltar\n"+
             "----------------")
 	
 	while True:
@@ -64,8 +63,6 @@ def mostrar_menu():
 			menu_buscar()
 		elif(option == 4):
 			menu_remover()
-		elif(option == 5):
-			pass
 		elif(option == 0):
 			print("Retornando ao menu principal...")
 			break

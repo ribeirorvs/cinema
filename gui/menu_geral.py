@@ -1,8 +1,13 @@
 from gui import menu_ator
 from logica import ator
 
+from gui import menu_sala
+from logica import sala
+
+
 def inicializar_dados():
 	ator.iniciar_atores()
+	sala.iniciar_salas()
 	
 def mostrar_menu():
 	inicializar_dados()
@@ -25,7 +30,7 @@ def mostrar_menu():
 		if(option == 1):
 			menu_ator.mostrar_menu()
 		elif(option == 2):
-			pass
+			menu_sala.mostrar_menu()
 		elif(option == 3):
 			pass
 		elif(option == 4):
