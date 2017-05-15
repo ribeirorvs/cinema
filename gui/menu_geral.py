@@ -1,7 +1,8 @@
-
+from gui import menu_ator
+from logica import ator
 
 def inicializar_dados():
-	pass
+	ator.iniciar_atores()
 	
 def mostrar_menu():
 	inicializar_dados()
@@ -22,7 +23,7 @@ def mostrar_menu():
 		option = int(input("Digite sua escolha: "))
 		
 		if(option == 1):
-			pass
+			menu_ator.mostrar_menu()
 		elif(option == 2):
 			pass
 		elif(option == 3):
@@ -37,4 +38,4 @@ def mostrar_menu():
 			print("Finalizando...")
 			break
 		else:
-			print("Valor invalido")
+			print("Opcao invalido")
