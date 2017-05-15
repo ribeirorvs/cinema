@@ -1,5 +1,16 @@
 from logica import filme
 
+def imprimir_filme(filme):
+	print("Codigo do filme: ", filme[0])
+	print("Titulo: ", filme[1])
+	print("Duracao: ", filme[2])
+	print("Classificacao: ", filme[3])
+	print("Diretor: ", filme[4])
+	print("Distribuidora: ", filme[5])
+	print("Status: ", filme[6])
+	print("Genero: ", filme[7])
+	print()
+
 def menu_cadastrar():
 	print("\nCadastrar Filme\n")
 	cod_filme = int(input("Codigo do filme: "))
@@ -12,6 +23,13 @@ def menu_cadastrar():
 	genero = input("Genero: ")
 	filme.cadastrar_filme(cod_filme, titulo, duracao, classificacao, diretor, distribuidora, status, genero)
 
+def menu_listar():
+	print("\nListar Filmes\n")
+	print()
+	filmes = filme.listar_filmes()
+	for f in filmes:
+		imprimir_filme(f)
+	
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Cadastrar novo Filme \n" +
@@ -29,7 +47,7 @@ def mostrar_menu():
 		if(option == 1):
 			menu_cadastrar()
 		elif(option == 2):
-			pass
+			menu_listar()
 		elif(option == 3):
 			pass
 		elif(option == 4):
