@@ -1,5 +1,16 @@
 from logica import filme
 
+def menu_cadastrar():
+	print("\nCadastrar Filme\n")
+	cod_filme = int(input("Codigo do filme: "))
+	titulo = input("Titulo: ")
+	duracao = input("Duracao: ")
+	classificacao = input("Classificacao: ")
+	diretor = input("Diretor: ")
+	distribuidora = input("Distribuidora: ")
+	status = input("Status: ")
+	genero = input("Genero: ")
+	filme.cadastrar_filme(cod_filme, titulo, duracao, classificacao, diretor, distribuidora, status, genero)
 
 def mostrar_menu():
 	menu = ("\n----------------\n"+
@@ -16,7 +27,7 @@ def mostrar_menu():
 		option = int(input("Digite sua escolha: "))
 		
 		if(option == 1):
-			pass
+			menu_cadastrar()
 		elif(option == 2):
 			pass
 		elif(option == 3):
