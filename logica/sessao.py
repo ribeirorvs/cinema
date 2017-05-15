@@ -4,20 +4,14 @@ from logica import sala
 sessoes = []
 cod_sessao = 0
 
-def _gerar_codigo():
-	global cod_sessao
-	cod_sessao += 1
-	return cod_sessao
-
 def listar_sessoes():
 	return sessoes
 	
-def criar_sessao(cod_filme, cod_sala, horario):
-	cod = _gerar_codigo()
+def criar_sessao(cod_sessao, cod_filme, cod_sala, horario):
 	f = filme.buscar_filme(cod_filme)
 	s = sala.buscar_sala(cod_sala)
 	disponibilidade = s
-	sessao = [cod, f, s, horario, disponibilidade]
+	sessao = [cod_sessao, f, s, horario, disponibilidade]
 	sessoes.append(sessao)
 	
 def remover_todas_sessoes():
@@ -41,8 +35,8 @@ def remover_sessao(cod_sessao):
 	return False
 
 def iniciar_sessoes():
-	criar_sessao(1, 1, "18h")
-	criar_sessao(2, 2, "20h")
+	criar_sessao(1, 1, 1, "18h")
+	criar_sessao(2, 2, 2, "20h")
 	
 def verificar_lotacao(cod_sessao):
 	for s in sessoes:

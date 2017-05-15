@@ -1,16 +1,11 @@
 atores = []
 cod_ator = 0
-def _gerar_codigo():
-    global cod_ator
-    cod_ator += 1
-    return cod_ator
 
 def listar_atores():
     return atores
 
-def cadastrar_ator(nome, nacionalidade, idade):
-    cod = _gerar_codigo()
-    ator = [cod, nome, nacionalidade, idade]
+def cadastrar_ator(cod_ator, nome, nacionalidade, idade):
+    ator = [cod_ator, nome, nacionalidade, idade]
     atores.append(ator)
 
 def buscar_ator(cod_ator):
@@ -33,5 +28,5 @@ def remover_todos_atores():
     cod_ator = 0
     
 def iniciar_atores():
-    cadastrar_ator("Nome", "Nacionalidade", 20)
-    cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
+    cadastrar_ator(1, "Nome", "Nacionalidade", 20)
+    cadastrar_ator(2, "Nome 2", "Nacionalidade 2", 22)

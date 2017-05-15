@@ -11,7 +11,7 @@ class TestSala(unittest.TestCase):
 		self.assertEqual(0, len(salas))
 		
 	def test_cadastrar_sala(self):
-		sala.cadastrar_sala(200)
+		sala.cadastrar_sala(1, 200)
 		
 		salas = sala.listar_salas()
 		
@@ -23,16 +23,16 @@ class TestSala(unittest.TestCase):
 		self.assertEqual("Livre", s[2])
 
 	def test_cadastrar_duas_salas(self):
-		sala.cadastrar_sala(200)
-		sala.cadastrar_sala(400)
+		sala.cadastrar_sala(1, 200)
+		sala.cadastrar_sala(2, 400)
 		
 		salas = sala.listar_salas()
 		
 		self.assertEqual(2, len(salas))
 	
 	def test_buscar_sala(self):
-		sala.cadastrar_sala(200)
-		sala.cadastrar_sala(400)
+		sala.cadastrar_sala(1, 200)
+		sala.cadastrar_sala(2, 400)
 		
 		s = sala.buscar_sala(2)
 		
@@ -40,8 +40,8 @@ class TestSala(unittest.TestCase):
 		self.assertEqual("Livre", s[2])
 		
 	def test_remover_sala(self):
-		sala.cadastrar_sala(200)
-		sala.cadastrar_sala(400)
+		sala.cadastrar_sala(1, 200)
+		sala.cadastrar_sala(2, 400)
 		
 		sala.remover_sala(2)
 		
@@ -50,8 +50,8 @@ class TestSala(unittest.TestCase):
 		self.assertIsNone(s)
 		
 	def test_remover_todas_salas(self):
-		sala.cadastrar_sala(200)
-		sala.cadastrar_sala(400)
+		sala.cadastrar_sala(1, 200)
+		sala.cadastrar_sala(2, 400)
 		
 		sala.remover_todas_salas()
 		
@@ -66,8 +66,8 @@ class TestSala(unittest.TestCase):
 		self.assertEqual(2, len(salas))
 		
 	def test_definir_status_ocupada(self):
-		sala.cadastrar_sala(200)
-		sala.cadastrar_sala(400)
+		sala.cadastrar_sala(1, 200)
+		sala.cadastrar_sala(2, 400)
 		
 		sala.definir_status_ocupada(2)
 		
@@ -76,8 +76,8 @@ class TestSala(unittest.TestCase):
 		self.assertEqual("Ocupada", s[2])
 	
 	def test_definir_status_livre(self):
-		sala.cadastrar_sala(200)
-		sala.cadastrar_sala(400)
+		sala.cadastrar_sala(1, 200)
+		sala.cadastrar_sala(2, 400)
 		
 		sala.definir_status_ocupada(2)
 		

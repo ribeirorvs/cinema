@@ -11,7 +11,7 @@ class TestAtor(unittest.TestCase):
         self.assertEqual(0, len(atores))
 
     def test_cadastrar_ator(self):
-        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator(1, "Nome", "Nacionalidade", 20)
 
         atores = ator.listar_atores()
         self.assertEqual(1, len(atores))
@@ -23,16 +23,16 @@ class TestAtor(unittest.TestCase):
         self.assertEqual(20, a[3])
 
     def test_adicionar_dois_atores(self):
-        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
-        ator.cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
+        ator.cadastrar_ator(1, "Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator(2, "Nome 2", "Nacionalidade 2", 22)
 
         atores = ator.listar_atores()
 
         self.assertEqual(2, len(atores))
 
     def test_buscar_ator(self):
-        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
-        ator.cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
+        ator.cadastrar_ator(1, "Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator(2, "Nome 2", "Nacionalidade 2", 22)
 
         a = ator.buscar_ator(2)
         
@@ -42,8 +42,8 @@ class TestAtor(unittest.TestCase):
 
     
     def test_remover_ator(self):
-        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
-        ator.cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
+        ator.cadastrar_ator(1, "Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator(2, "Nome 2", "Nacionalidade 2", 22)
 
         ator.remover_ator(2)
 
@@ -52,8 +52,8 @@ class TestAtor(unittest.TestCase):
         self.assertIsNone(a)
 
     def test_remover_todos_atores(self):
-        ator.cadastrar_ator("Nome", "Nacionalidade", 20)
-        ator.cadastrar_ator("Nome 2", "Nacionalidade 2", 22)
+        ator.cadastrar_ator(1, "Nome", "Nacionalidade", 20)
+        ator.cadastrar_ator(2, "Nome 2", "Nacionalidade 2", 22)
 
         ator.remover_todos_atores()
 

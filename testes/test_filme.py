@@ -12,7 +12,7 @@ class TestFilme(unittest.TestCase):
         self.assertEqual(0, len(filmes))
 
     def test_cadastrar_um_filme(self):
-        filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+        filme.cadastrar_filme(1, "titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
 
         filmes = filme.listar_filmes()
 
@@ -29,16 +29,16 @@ class TestFilme(unittest.TestCase):
         self.assertEqual("genero", f[7])
         
     def test_adicionar_dois_filmes(self):
-        filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
-        filme.cadastrar_filme("titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
+        filme.cadastrar_filme(1, "titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+        filme.cadastrar_filme(2, "titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
 
         filmes = filme.listar_filmes()
 
         self.assertEqual(2, len(filmes))        
 
     def test_buscar_filme(self):
-        filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
-        filme.cadastrar_filme("titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
+        filme.cadastrar_filme(1, "titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+        filme.cadastrar_filme(2, "titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
 
         f = filme.buscar_filme(2)
 
@@ -51,8 +51,8 @@ class TestFilme(unittest.TestCase):
         self.assertEqual("genero 2", f[7])
 
     def test_remover_filme(self):
-        filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
-        filme.cadastrar_filme("titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
+        filme.cadastrar_filme(1, "titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+        filme.cadastrar_filme(2, "titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
 
         filme.remover_filme(2)
 
@@ -61,8 +61,8 @@ class TestFilme(unittest.TestCase):
         self.assertIsNone(f)
 
     def test_remover_todos_filmes(self):
-        filme.cadastrar_filme("titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
-        filme.cadastrar_filme("titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
+        filme.cadastrar_filme(1, "titulo", "duração", "classificação", "diretor", "distribuidora", "status", "genero")
+        filme.cadastrar_filme(2, "titulo 2", "duração 2", "classificação 2", "diretor 2", "distribuidora 2", "status 2", "genero 2")
 
         filme.remover_todos_filmes()
 

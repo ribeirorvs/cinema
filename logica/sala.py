@@ -1,17 +1,11 @@
 salas = []
 cod_sala = 0
 
-def _gerar_codigo():
-	global cod_sala
-	cod_sala +=1
-	return cod_sala
-
 def listar_salas():
 	return salas
 
-def cadastrar_sala(lotacao):
-	cod = _gerar_codigo()
-	sala = [cod, lotacao, "Livre"]
+def cadastrar_sala(cod_sala, lotacao):
+	sala = [cod_sala, lotacao, "Livre"]
 	salas.append(sala)
 	
 def remover_todas_salas():
@@ -34,8 +28,8 @@ def remover_sala(cod_sala):
 	return False
 	
 def iniciar_salas():
-	cadastrar_sala(200)
-	cadastrar_sala(400)
+	cadastrar_sala(1, 200)
+	cadastrar_sala(2, 400)
 	
 def definir_status_ocupada(cod_sala):
 	for i in range(len(salas)):

@@ -136,5 +136,7 @@ class TestIngresso(unittest.TestCase):
 		i = ingresso.listar_ingressos()
 		
 		self.assertEqual(4, len(i))
+	
+	
 if __name__ == '__main__':
 	unittest.main(exit=False)

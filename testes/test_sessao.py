@@ -16,7 +16,7 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual(0, len(sessoes))
 	
 	def test_criar_uma_sessao(self):
-		sessao.criar_sessao(1, 1, "18h")
+		sessao.criar_sessao(1, 1, 1, "18h")
 		
 		sessoes = sessao.listar_sessoes()
 		
@@ -31,8 +31,8 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual("18h", s[3])
 	
 	def test_criar_duas_sessoes(self):
-		sessao.criar_sessao(1, 1, "18h")
-		sessao.criar_sessao(2, 2, "20h")
+		sessao.criar_sessao(1, 1, 1, "18h")
+		sessao.criar_sessao(2, 2, 2, "20h")
 		
 		sessoes = sessao.listar_sessoes()
 		
@@ -47,8 +47,8 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual("20h", s[3])
 	
 	def test_recuperar_sessao(self):
-		sessao.criar_sessao(1, 1, "18h")
-		sessao.criar_sessao(2, 2, "20h")
+		sessao.criar_sessao(1, 1, 1, "18h")
+		sessao.criar_sessao(2, 2, 2, "20h")
 		
 		s = sessao.recuperar_sessao(2)
 		salas = sala.buscar_sala(2)
@@ -59,8 +59,8 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual("20h", s[3])
 	
 	def test_remover_sessao(self):
-		sessao.criar_sessao(1, 1, "18h")
-		sessao.criar_sessao(2, 2, "20h")
+		sessao.criar_sessao(1, 1, 1, "18h")
+		sessao.criar_sessao(2, 2, 2, "20h")
 		
 		sessao.remover_sessao(2)
 		
@@ -69,8 +69,8 @@ class TestSessao(unittest.TestCase):
 		self.assertIsNone(s)
 	
 	def test_remover_todas_sessoes(self):
-		sessao.criar_sessao(1, 1, "18h")
-		sessao.criar_sessao(2, 2, "20h")
+		sessao.criar_sessao(1, 1, 1, "18h")
+		sessao.criar_sessao(2, 2, 2, "20h")
 		
 		sessao.remover_todas_sessoes()
 		
@@ -86,8 +86,8 @@ class TestSessao(unittest.TestCase):
 		self.assertEqual(2, len(sessoes))
 	
 	def test_verificar_lotacao(self):
-		sessao.criar_sessao(1, 1, "18h")
-		sessao.criar_sessao(2, 2, "20h")
+		sessao.criar_sessao(1, 1, 1, "18h")
+		sessao.criar_sessao(2, 2, 2, "20h")
 		
 		s = sessao.verificar_lotacao(2)
 		salas = sala.buscar_sala(2)
