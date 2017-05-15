@@ -20,6 +20,16 @@ def menu_listar():
 	atores = ator.listar_atores()
 	for a in atores:
 		imprimir_ator(a)
+
+def menu_buscar():
+	print("\nBuscar Ator\n")
+	cod_ator = int(input("Codigo do ator: "))
+	print()
+	a = ator.buscar_ator(cod_ator)
+	if (a == None):
+		print("Ator nao encontrado")
+	else:
+		imprimir_ator(a)
 	
 def mostrar_menu():
 	menu = ("\n----------------\n"+
@@ -41,7 +51,7 @@ def mostrar_menu():
 		elif(option == 2):
 			menu_listar()
 		elif(option == 3):
-			pass
+			menu_buscar()
 		elif(option == 4):
 			pass
 		elif(option == 5):
