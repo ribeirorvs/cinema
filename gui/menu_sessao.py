@@ -1,5 +1,13 @@
 from logica import sessao
 
+def imprimir_sessao(sessao):
+	print("Codigo Sessao: ", sessao[0])
+	print("Filme: ", sessao[1])
+	print("Sala: ", sessao[2][1])
+	print("Horario: ", sessao[3])
+	print("Lotacao: ", sessao[4][1])
+	print()
+	
 def menu_criar():
 	print("\nCriar Sessao\n")
 	cod_sessao = int(input("Codigo Sessao: "))
@@ -8,6 +16,13 @@ def menu_criar():
 	horario = input("Horario: ")
 	sessao.criar_sessao(cod_sessao, cod_filme, cod_sala, horario)
 
+def menu_listar():
+	print("\nCriar Sessao\n")
+	
+	sessoes = sessao.listar_sessoes()
+	for s in sessoes:
+		imprimir_sessao(s)
+	
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Criar nova Sessao \n" +
@@ -26,7 +41,7 @@ def mostrar_menu():
 		if(option == 1):
 			menu_criar()
 		elif(option == 2):
-			pass
+			menu_listar()
 		elif(option == 3):
 			pass
 		elif(option == 4):
