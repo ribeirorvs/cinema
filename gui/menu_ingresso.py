@@ -1,5 +1,11 @@
 from logica import ingresso
 
+def menu_vender_meia():
+	print("\nCadastrar Ator\n")
+	cod_ingresso = int(input("Codigo Ingresso: "))
+	cod_sessao = int(input("Codigo Sessao: "))
+	ingresso.venda_ingresso_meia(cod_ingresso, cod_sessao)
+
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Vender ingresso Meia \n" +
@@ -16,7 +22,7 @@ def mostrar_menu():
 		option = int(input("Digite sua escolha: "))
 		
 		if(option == 1):
-			pass
+			menu_vender_meia()
 		elif(option == 2):
 			pass
 		elif(option == 3):
