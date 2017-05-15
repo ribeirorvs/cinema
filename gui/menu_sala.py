@@ -1,5 +1,11 @@
 from logica import sala
 
+def menu_cadastrar():
+	print("\nCadastrar Sala\n")
+	cod_sala = int(input("Codigo da sala: "))
+	lotacao = int(input("Lotacao maxima: "))
+	sala.cadastrar_sala(cod_sala, lotacao)
+
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Cadastrar nova Sala \n" +
@@ -17,7 +23,7 @@ def mostrar_menu():
 		option = int(input("Digite sua escolha: "))
 			
 		if(option == 1):
-			pass
+			menu_cadastrar()
 		elif(option == 2):
 			pass
 		elif(option == 3):
