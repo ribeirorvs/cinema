@@ -25,9 +25,18 @@ def menu_cadastrar():
 
 def menu_listar():
 	print("\nListar Filmes\n")
-	print()
 	filmes = filme.listar_filmes()
 	for f in filmes:
+		imprimir_filme(f)
+	
+def menu_buscar():
+	print("\nBuscar Filme\n")
+	cod_filme = int(input("Codigo do filme: "))
+	print()
+	f = filme.buscar_filme(cod_filme)
+	if(f == None):
+		print("Filme nao encontrado")
+	else:
 		imprimir_filme(f)
 	
 def mostrar_menu():
@@ -49,7 +58,7 @@ def mostrar_menu():
 		elif(option == 2):
 			menu_listar()
 		elif(option == 3):
-			pass
+			menu_buscar()
 		elif(option == 4):
 			pass
 		elif(option == 0):
