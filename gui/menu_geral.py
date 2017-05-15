@@ -10,11 +10,14 @@ from logica import filme
 from gui import menu_elenco
 from logica import elenco
 
+from gui import menu_sessao
+from logica import sessao
 
 def inicializar_dados():
 	ator.iniciar_atores()
 	sala.iniciar_salas()
 	filme.iniciar_filmes()
+	sessao.iniciar_sessoes()
 	elenco.iniciar_elencos()
 	
 def mostrar_menu():
@@ -44,7 +47,7 @@ def mostrar_menu():
 		elif(option == 4):
 			menu_elenco.mostrar_menu()
 		elif(option == 5):
-			pass
+			menu_sessao.mostrar_menu()
 		elif(option == 6):
 			pass
 		elif(option == 0):
