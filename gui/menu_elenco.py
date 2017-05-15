@@ -2,7 +2,7 @@ from logica import elenco
 
 def imprimir_elenco(elenco):
 	print("Codigo elenco: ", elenco[0][0])
-	print("Atores: ")
+	# print("Atores: ")
 	# for a in elenco[0][1]:
 		# print(a)
 	print("Atores: ", elenco[0][1])
@@ -19,7 +19,7 @@ def menu_adicionar():
 	elenco.adicionar_ator(cod_elenco, cod_ator, cod_filme, tipo)
 
 def menu_listar():
-	print("\nAdicionar ator no Elenco\n")
+	print("\nListar Elenco\n")
 	elencos = elenco.listar_elencos()
 	for e in elencos:
 		imprimir_elenco(e)
@@ -35,7 +35,7 @@ def menu_buscar_elenco():
 		imprimir_elenco(e)
 
 def menu_buscar_filme():
-	print("\nBuscar Elenco por codigo\n")
+	print("\nBuscar Elenco por filme\n")
 	cod_filme = int(input("Codigo filme: "))
 	print()
 	e = elenco.buscar_elenco_por_filme(cod_filme)
@@ -44,7 +44,28 @@ def menu_buscar_filme():
 	else:
 		for i in e:
 			imprimir_elenco(i)
-		
+
+def menu_buscar_ator():
+	print("\nBuscar Elenco por ator\n")
+	cod_ator = int(input("Codigo ator: "))
+	print()
+	e = elenco.buscar_filmes_por_ator(cod_ator)
+	if(e == []):
+		print("Elenco nao encontrado")
+	else:
+		for i in e:
+			imprimir_elenco(i)
+			
+def menu_remover():
+	print("\nRemover Elenco\n")
+	cod_elenco = int(input("Codigo elenco: "))
+	print()
+	e = elenco.remover_elenco(cod_elenco)
+	if(e == False):
+		print("Elenco nao encontrado")
+	else:
+		print("Elenco removido")
+			
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Adicionar ator no Elenco \n" +
@@ -70,9 +91,9 @@ def mostrar_menu():
 		elif(option == 4):
 			menu_buscar_filme()
 		elif(option == 5):
-			pass
+			menu_buscar_ator()
 		elif(option == 6):
-			pass
+			menu_remover()
 		elif(option == 0):
 			print("Retornando ao menu principal...")
 			break
