@@ -118,5 +118,23 @@ class TestIngresso(unittest.TestCase):
 		
 		self.assertIsNone(i)
 	
+	def test_remover_todos_ingressos(self):
+		ingresso.venda_ingresso_inteira(1, 1)
+		ingresso.venda_ingresso_inteira(2, 2)
+		ingresso.venda_ingresso_meia(3, 1)
+		ingresso.venda_ingresso_meia(4, 2)
+		
+		ingresso.remover_todos_ingressos()
+		
+		i = ingresso.listar_ingressos()
+		
+		self.assertEqual(0, len(i))
+	
+	def test_iniciar_ingressos(self):
+		ingresso.iniciar_ingressos()
+		
+		i = ingresso.listar_ingressos()
+		
+		self.assertEqual(4, len(i))
 if __name__ == '__main__':
 	unittest.main(exit=False)

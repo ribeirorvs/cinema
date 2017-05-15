@@ -52,3 +52,9 @@ def remover_ingresso(cod_ingresso):
 			ingressos.remove(i)
 			return True
 	return False
+	
+def iniciar_ingressos():
+	venda_ingresso_inteira(1, 1)
+	venda_ingresso_inteira(2, 2)
+	venda_ingresso_meia(3, 1)
+	venda_ingresso_meia(4, 2)
