@@ -1,9 +1,13 @@
 import unittest
 from logica import elenco
+from logica import ator
+from logica import filme
 
 class TestElenco(unittest.TestCase):
 	
 	def setUp(self):
+		ator.iniciar_atores()
+		filme.iniciar_filmes()
 		elenco.remover_todos_elencos()
 	
 	def test_sem_elenco(self):
@@ -103,7 +107,7 @@ class TestElenco(unittest.TestCase):
 		
 		e = elenco.buscar_elenco_por_filme(1)
 		
-		self.assertEqual(0, len(e))
+		self.assertEqual(4, len(e))
 	
 	def test_buscar_filmes_por_ator(self):
 		elenco.adicionar_ator(0, 1, 1, "Coadjuvante")
@@ -113,7 +117,7 @@ class TestElenco(unittest.TestCase):
 		
 		e = elenco.buscar_filmes_por_ator(1)
 		
-		self.assertEqual(0, len(e))
+		self.assertEqual(2, len(e))
 	
 if __name__ == '__main__':
 	unittest.main(exit=False)

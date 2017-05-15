@@ -49,7 +49,7 @@ def buscar_elenco_por_filme(cod_filme):
 	e = []
 	for i in range(len(elencos)):
 		for j in range(len(elencos[i])):
-			if(elencos[i][j][2] == cod_filme):
+			if(elencos[i][j][2][0] == cod_filme):
 				e.append(elencos[i])
 	return e
 	
@@ -57,6 +57,6 @@ def buscar_filmes_por_ator(cod_ator):
 	e = []
 	for i in range(len(elencos)):
 		for j in range(len(elencos[i])):
-			if(elencos[i][j][1] == cod_ator):
+			if(elencos[i][j][1][0] == cod_ator):
 				e.append(elencos[i])
 	return e

@@ -3,8 +3,8 @@ from logica import elenco
 def imprimir_elenco(elenco):
 	print("Codigo elenco: ", elenco[0][0])
 	print("Atores: ")
-	for a in elenco[0][1]:
-		print(a)
+	# for a in elenco[0][1]:
+		# print(a)
 	print("Atores: ", elenco[0][1])
 	print("Filme: ", elenco[0][2])
 	print("Tipo de ator: ", elenco[0][3])
@@ -33,7 +33,18 @@ def menu_buscar_elenco():
 		print("Elenco nao encontrado")
 	else:
 		imprimir_elenco(e)
-	
+
+def menu_buscar_filme():
+	print("\nBuscar Elenco por codigo\n")
+	cod_filme = int(input("Codigo filme: "))
+	print()
+	e = elenco.buscar_elenco_por_filme(cod_filme)
+	if(e == []):
+		print("Elenco nao encontrado")
+	else:
+		for i in e:
+			imprimir_elenco(i)
+		
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Adicionar ator no Elenco \n" +
@@ -57,7 +68,7 @@ def mostrar_menu():
 		elif(option == 3):
 			menu_buscar_elenco()
 		elif(option == 4):
-			pass
+			menu_buscar_filme()
 		elif(option == 5):
 			pass
 		elif(option == 6):
