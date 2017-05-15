@@ -1,11 +1,24 @@
 from logica import sala
 
+def imprimir_sala(sala):
+	print("Codigo da sala: ", sala[0])
+	print("Lotacao maxima: ", sala[1])
+	print()
+
 def menu_cadastrar():
 	print("\nCadastrar Sala\n")
 	cod_sala = int(input("Codigo da sala: "))
 	lotacao = int(input("Lotacao maxima: "))
 	sala.cadastrar_sala(cod_sala, lotacao)
 
+def menu_listar():
+	print("\nCadastrar Sala\n")
+	salas = sala.listar_salas()
+	print()
+	for s in salas:
+		imprimir_sala(s)
+
+	
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Cadastrar nova Sala \n" +
@@ -25,7 +38,7 @@ def mostrar_menu():
 		if(option == 1):
 			menu_cadastrar()
 		elif(option == 2):
-			pass
+			menu_listar()
 		elif(option == 3):
 			pass
 		elif(option == 4):
