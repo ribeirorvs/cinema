@@ -24,6 +24,15 @@ def menu_listar():
 	for e in elencos:
 		imprimir_elenco(e)
 	
+def menu_buscar_elenco():
+	print("\nBuscar Elenco por codigo\n")
+	cod_elenco = int(input("Codigo elenco: "))
+	print()
+	e = elenco.buscar_elenco(cod_elenco)
+	if(e == None):
+		print("Elenco nao encontrado")
+	else:
+		imprimir_elenco(e)
 	
 def mostrar_menu():
 	menu = ("\n----------------\n"+
@@ -46,7 +55,7 @@ def mostrar_menu():
 		elif(option == 2):
 			menu_listar()
 		elif(option == 3):
-			pass
+			menu_buscar_elenco()
 		elif(option == 4):
 			pass
 		elif(option == 5):
