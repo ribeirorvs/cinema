@@ -12,14 +12,14 @@ def menu_cadastrar():
 	sala.cadastrar_sala(cod_sala, lotacao)
 
 def menu_listar():
-	print("\nCadastrar Sala\n")
+	print("\Listar Salas\n")
 	salas = sala.listar_salas()
 	print()
 	for s in salas:
 		imprimir_sala(s)
 
 def menu_buscar():
-	print("\nCadastrar Sala\n")
+	print("\Buscar Sala\n")
 	cod_sala = int(input("Codigo da sala: "))
 	print()
 	s = sala.buscar_sala(cod_sala)
@@ -27,7 +27,17 @@ def menu_buscar():
 		print("Sala nao encontrada")
 	else:
 		imprimir_sala(s)
-	
+
+def menu_remover():
+	print("\Remover Sala\n")
+	cod_sala = int(input("Codigo da sala: "))
+	print()
+	s = sala.remover_sala(cod_sala)
+	if(s == False):
+		print("Sala nao encontrada")
+	else:
+		print("Sala removida")
+		
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Cadastrar nova Sala \n" +
@@ -51,7 +61,7 @@ def mostrar_menu():
 		elif(option == 3):
 			menu_buscar()
 		elif(option == 4):
-			pass
+			menu_remover()
 		elif(option == 5):
 			pass
 		elif(option == 6):
