@@ -18,6 +18,15 @@ def menu_listar():
 	for s in salas:
 		imprimir_sala(s)
 
+def menu_buscar():
+	print("\nCadastrar Sala\n")
+	cod_sala = int(input("Codigo da sala: "))
+	print()
+	s = sala.buscar_sala(cod_sala)
+	if(s == None):
+		print("Sala nao encontrada")
+	else:
+		imprimir_sala(s)
 	
 def mostrar_menu():
 	menu = ("\n----------------\n"+
@@ -40,7 +49,7 @@ def mostrar_menu():
 		elif(option == 2):
 			menu_listar()
 		elif(option == 3):
-			pass
+			menu_buscar()
 		elif(option == 4):
 			pass
 		elif(option == 5):
