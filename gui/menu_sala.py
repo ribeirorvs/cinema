@@ -48,6 +48,16 @@ def menu_status_ocupada():
 	else:
 		print("Status da sala alterado para ocupada")
 
+def menu_status_livre():
+	print("\nDefinir Sala livre\n")
+	cod_sala = int(input("Codigo da sala: "))
+	print()
+	s = sala.definir_status_livre(cod_sala)
+	if(s == False):
+		print("Sala nao encontrada ou já livre")
+	else:
+		print("Status da sala alterado para livre")
+		
 def mostrar_menu():
 	menu = ("\n----------------\n"+
             "(1) Cadastrar nova Sala \n" +
@@ -75,7 +85,7 @@ def mostrar_menu():
 		elif(option == 5):
 			menu_status_ocupada()
 		elif(option == 6):
-			pass
+			menu_status_livre()
 		elif(option == 0):
 			print("Retornando ao menu principal...")
 			break
